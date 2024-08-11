@@ -9,12 +9,12 @@ function add(data) {
         return parseInt(str);
     }
 
-    const strArr = str.split(",");
+    const numArr = str.split(",").map((val) => parseInt(val));
 
-    return parseInt(strArr[0]) + parseInt(strArr[1]);
+    return numArr.reduce((acc, num) => acc + num, 0);
 }
 
-console.log("res: ", add("1,2"));
+console.log("res: ", add("1,2,3,4"));
 
 module.exports = {
     add
