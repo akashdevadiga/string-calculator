@@ -19,3 +19,7 @@ test('multiple numbers separated by a comma return their sum', () => {
 test('numbers with new lines or commas returns sum', () => {
     expect(add("1\n2,3")).toBe(6);
 });
+
+test('negative numbers not allowed', () => {
+    expect(() => add("1,3,-6")).toThrow("negative numbers not allowed -6");
+});
